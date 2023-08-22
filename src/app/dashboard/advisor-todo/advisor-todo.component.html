@@ -1,0 +1,54 @@
+<div class="button-container text-end mb-2">
+    <button mat-fab color="primary" class="me-3" routerLink="/dashboard/advisorProgs">
+        <mat-icon>line_weight</mat-icon>
+      </button>
+    <button mat-fab color="primary" (click)="openDialog()">
+      <mat-icon>add task</mat-icon>
+    </button>
+ </div>
+ <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+  </mat-form-field>
+  <div class="row p-3">
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort >  
+       
+        <ng-container matColumnDef="ID">
+          <th [hidden]="true" mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td [hidden]="true" mat-cell *matCellDef="let row"> {{row.ID}} </td>
+        </ng-container>
+    
+        
+        <ng-container matColumnDef="Username">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.Username}}</td>
+        </ng-container>
+    
+        
+        <ng-container matColumnDef="Datetime">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Created Date </th>
+          <td mat-cell *matCellDef="let row"> {{row.Datetime}} </td>
+        </ng-container> 
+        
+        <ng-container matColumnDef="Actions">
+          <th mat-header-cell *matHeaderCellDef> Actions </th>
+          <td mat-cell *matCellDef="let element"> 
+            <button mat-icon-button class="me-2" (click)="editUser(element)"><mat-icon>mode_edit</mat-icon></button>
+            <button mat-icon-button (click)="deleteUSer(element.ID)"><mat-icon>delete</mat-icon></button>
+            </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+        
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+      </table>
+    
+      <mat-paginator [pageSizeOptions]="[10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+  </div>
+  

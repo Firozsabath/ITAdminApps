@@ -1,0 +1,28 @@
+
+<app-header (open)="navOpen($event)"></app-header>
+<!-- <mat-drawer-container class="app-container">
+    <mat-drawer mode="side" opened class="sidediv">
+        <app-sidebar></app-sidebar>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="p-3">
+            <h3 class="fw-bold">Live Student Search</h3>
+            <app-search-filter></app-search-filter></div>
+        <div><router-outlet></router-outlet></div>
+    </mat-drawer-content>
+  </mat-drawer-container> -->
+
+  <mat-sidenav-container>
+    <mat-sidenav [(opened)]="opened" mode="side">
+        <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <main>
+        <div style="padding: 15px;">
+          <router-outlet></router-outlet>       
+        </div>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+<app-footer></app-footer>

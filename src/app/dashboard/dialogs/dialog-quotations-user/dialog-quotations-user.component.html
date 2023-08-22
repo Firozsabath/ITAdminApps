@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>Add User</h2>
+<form [formGroup]="quotUser" (ngSubmit)="postUser()">
+    <mat-dialog-content>
+            <div>
+                <mat-form-field appearance="fill" >
+                    <mat-label>Enter User Name</mat-label>
+                    <input matInput formControlName="Username">
+                    <mat-error *ngIf="quotUser.get('Username')?.hasError('Username')">Please enter department name</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Select User Role</mat-label>
+                    <mat-select [(ngModel)]="roleSelectedValue" name="role" formControlName='Status'>
+                      <mat-option [value]="">
+                        Select a Role
+                      </mat-option>
+                      <mat-option *ngFor="let role of roles" [value]="role">
+                        {{role}}
+                      </mat-option>                       
+                    </mat-select>
+                    <mat-error *ngIf="quotUser.get('Status')?.hasError('Status')">Please select a Role</mat-error>
+                  </mat-form-field> 
+                  <!-- <input matInput formControlName="Status"> -->
+            </div>  
+            <div class="d-none">
+                <input matInput formControlName="ID">
+                <input matInput formControlName="DateLogged">                
+            </div>          
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+            <button mat-button [mat-dialog-close]="true" color="warn">Close</button>
+            <button mat-button type="submit" cdkFocusInitial color="primary">Save</button>
+    </mat-dialog-actions>
+</form>
+

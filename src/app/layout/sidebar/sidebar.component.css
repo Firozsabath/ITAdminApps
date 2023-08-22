@@ -1,0 +1,28 @@
+/* .sidebar{
+    width: 220px;   
+} 
+
+.sidebar button{
+    color: white;
+} */
+
+/* mat-nav-list a span{
+    color: black;
+}
+
+mat-nav-list mat-icon{
+    color: white;
+    margin-right: 5px;
+} */
+
+mat-icon{
+    vertical-align: middle;
+}
+
+.mat-expansion-panel {
+    box-shadow: none;
+    background: transparent;
+  }
+
+
+

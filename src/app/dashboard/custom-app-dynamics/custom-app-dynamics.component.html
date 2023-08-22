@@ -1,0 +1,131 @@
+<h2 class="mb-4">Custom Apps Statistics</h2>
+<div class="row">
+    <div class="col col-12 col-md-3 mb-5">
+        <mat-card class="example-card p-0">
+            <div class="cardcushead">
+                <h2 class="p-3">Quotaion App</h2>     
+            </div>
+             <div class="px-3">
+                <mat-card-content>
+                    <div class="row p-2">
+                        <div class="col-md-4">
+                            <mat-card-title>{{overallStats.QuotationStats.DataCount}}</mat-card-title>
+                            <mat-card-subtitle>Quotations</mat-card-subtitle>
+                        </div>
+                        <div class="col-md-4"> 
+                            <mat-card-title>{{overallStats.QuotationStats.LoginCount}}</mat-card-title>
+                            <mat-card-subtitle>Logins</mat-card-subtitle>
+                        </div>  
+                        <div class="col-md-4"> 
+                            <mat-card-title>{{overallStats.QuotationStats.UserCount}}</mat-card-title>
+                            <mat-card-subtitle>Users</mat-card-subtitle>
+                        </div>                      
+                    </div>
+                   
+                    <mat-divider></mat-divider>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                  <button mat-button>SHARE</button>
+                </mat-card-actions>
+             </div>        
+            </mat-card>
+    </div>
+    <div class="col col-12 col-md-3">
+        <mat-card class="example-card p-0">
+            <div class="cardcushead">
+                <h2 class="p-3">CUD Fin App</h2>     
+            </div> 
+            <div class="px-3">
+                <mat-card-content>
+                    <div class="row p-2">
+                        <div class="col-md-4">
+                            <mat-card-title>{{overallStats.AdminAppStats.DataCount}}</mat-card-title>
+                            <mat-card-subtitle>Operations</mat-card-subtitle>
+                        </div>
+                        <div class="col-md-4"> 
+                            <mat-card-title>{{overallStats.AdminAppStats.LoginCount}}</mat-card-title>
+                            <mat-card-subtitle>Logins</mat-card-subtitle>
+                        </div>  
+                        <div class="col-md-4"> 
+                            <mat-card-title>{{overallStats.AdminAppStats.UserCount}}</mat-card-title>
+                            <mat-card-subtitle>Users</mat-card-subtitle>
+                        </div>                        
+                    </div>
+                   
+                    <mat-divider></mat-divider>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                  <button mat-button>SHARE</button>
+                </mat-card-actions>              
+             </div>              
+        </mat-card>
+    </div>
+    <div class="col col-12 col-md-3">
+        <mat-card class="example-card p-0">
+            <div class="cardcushead">
+                <h2 class="p-3">Advisor App</h2>     
+            </div> 
+            <div class="px-3">
+                <mat-card-content>
+                    <div class="row p-2">
+                        <div class="col-md-4">
+                            <mat-card-title>{{overallStats.AdvisorAppStats.DataCount}}</mat-card-title>
+                            <mat-card-subtitle>Operations</mat-card-subtitle>
+                        </div>
+                        <div class="col-md-4"> 
+                            <mat-card-title>{{overallStats.AdvisorAppStats.LoginCount}}</mat-card-title>
+                            <mat-card-subtitle>Logins</mat-card-subtitle>
+                        </div>  
+                        <div class="col-md-4"> 
+                            <mat-card-title>{{overallStats.AdvisorAppStats.UserCount}}</mat-card-title>
+                            <mat-card-subtitle>Users</mat-card-subtitle>
+                        </div>                             
+                    </div>
+                   
+                    <mat-divider></mat-divider>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                  <button mat-button>SHARE</button>
+                </mat-card-actions>              
+             </div>                  
+           
+          </mat-card>
+    </div>
+    <div class="col col-12 col-md-3">
+        <mat-card class="example-card p-0">
+            <div class="cardcushead">
+                <h2 class="p-3">Invoice Generator</h2>     
+            </div>
+            <div class="px-3">
+                <mat-card-content>
+                    <div class="row p-2">
+                        <div class="col-md-4">
+                            <mat-card-title>{{overallStats.InvoiceGenStats.DataCount}}</mat-card-title>
+                            <mat-card-subtitle>Invoices</mat-card-subtitle>
+                        </div>                         
+                        <div class="col-md-4"> 
+                            <mat-card-title>{{overallStats.InvoiceGenStats.UserCount}}</mat-card-title>
+                            <mat-card-subtitle>Users</mat-card-subtitle>
+                        </div>                        
+                    </div>
+                   
+                    <mat-divider></mat-divider>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                  <button mat-button>SHARE</button>
+                </mat-card-actions>              
+             </div>        
+            
+          </mat-card>
+    </div>
+    <div class="col-12 col-md-6"> 
+        <canvas id="quotbarchart"></canvas>
+    </div>
+    <div class="col-12 col-md-6" >                
+        <canvas id="quotpiechart"></canvas>
+    </div>
+</div>

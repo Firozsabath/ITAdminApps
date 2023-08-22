@@ -1,0 +1,40 @@
+<!-- <p>hiiiii
+
+</p> -->
+<div>
+    <div class="lginbg">
+        <div class="card p-4">
+            <img class="card-img-top rounded-circle custom_rounded profimg" src="../assets/Images/red-logo-maple-date.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title text-center">Welcome</h5>            
+                <p class="card-text text-center small font-weight-bold">Login using your system credentials.</p>                
+            </div>
+            <mat-error class="mb-2 text-center fw-bold">{{exMessage}}</mat-error>
+            <mat-card>
+                <form [formGroup]="Loginform" (ngSubmit)="OnSubmit(signInForm)" #signInForm="ngForm">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Enter Your EmailID" name="EmailID" id="EmailID"  formControlName = 'emailID'>
+                        <mat-error *ngIf="Allcontrols?.emailID?.errors?.email&&submitted">Invalid EmailID</mat-error>
+                        <mat-error *ngIf="Allcontrols?.emailID?.errors?.required&&submitted">EmailID Required</mat-error>
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>                
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Enter Your Password" name="password" id="password" [type]="hide ? 'password' : 'text'" formControlName = 'password'>  
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                          </button>                  
+                        <mat-error *ngIf="Allcontrols?.password?.errors?.required&&submitted">Password Required</mat-error>                         
+                    </mat-form-field>
+    
+                    <div style="text-align: center;">
+                        <button mat-raised-button color="primary">Login</button>
+                    </div>
+                </form>
+            </mat-card>        
+        </div>
+    
+    </div>
+    </div>

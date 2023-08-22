@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col col-8 col-md-10">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Search Student</mat-label>
+            <!-- <input matInput placeholder="Enter Prospect or studentID" [(ngModel)]="enteredSearch" (keyup)="sendData($event)"/>  -->
+
+             <input matInput placeholder="Enter Prospect or studentID" (keyup)="sendData($event)" [matAutocomplete]="auto"/> 
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let item of stud_details" [value]="item.Name">
+                    {{item.Name}} - {{item.ProspectID}} - {{item.EmailID}}
+                </mat-option>
+            </mat-autocomplete>            
+          </mat-form-field>
+    </div>
+    <div class="col col-4 col-md-2"> <button mat-raised-button color="primary" (click)="onsearchEvent()" class="mat-big-button p-2">Search</button>  </div>
+</div>

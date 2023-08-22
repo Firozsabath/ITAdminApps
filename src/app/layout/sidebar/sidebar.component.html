@@ -1,0 +1,63 @@
+<!-- <div class="sidebar">
+    <mat-list role="list">
+        <mat-list-item role="listitem">
+            <button mat-button class="menu-button mb-3">
+            <mat-icon>home</mat-icon>
+            <span style="font-size: 18px;">Dashboard</span> 
+        </button>
+    </mat-list-item>
+        <mat-list-item role="listitem">
+            <button mat-button routerLink="/dashboard/Studstatus" class="menu-button">
+                <mat-icon>person</mat-icon>
+                <span>Status Update</span> 
+            </button>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+            <button mat-button routerLink="/dashboard/documents"class="menu-button">
+                <mat-icon>terminal</mat-icon>
+                <span>Docs</span> 
+            </button>
+        </mat-list-item>
+      </mat-list>
+</div> -->
+<mat-nav-list class="sidenav-list">
+    <a mat-list-item routerLink="/dashboard/Appstatics" (click)="onToggleClose()">
+        <mat-icon>view_list</mat-icon>
+      <span>Custom Apps</span>
+    </a>
+    <!-- <a mat-list-item routerLink="/employeeCreate" (click)="onToggleClose()">
+      <mat-icon>account_circle</mat-icon>
+      <span>Add New Employee</span>
+    </a>
+    <a mat-list-item routerLink="/accomodation" (click)="onToggleClose()">
+        <mat-icon>speaker_notes</mat-icon>
+      <span>Employee Attendance</span>
+    </a>
+    <a mat-list-item routerLink="/offers" (click)="onToggleClose()">
+        <mat-icon>business_center</mat-icon>
+      <span>Leave Details</span>
+    </a>
+    <a mat-list-item routerLink="/offers" (click)="onToggleClose()">
+        <mat-icon> money</mat-icon>
+        <span>Payroll</span>
+    </a>
+    <a mat-list-item routerLink="/offers" (click)="onToggleClose()">
+    <mat-icon>credit_card</mat-icon>
+    <span>Payroll Details</span>
+    </a> -->
+
+    <mat-accordion>      
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            User Permission
+          </mat-panel-title>          
+        </mat-expansion-panel-header>
+        <a mat-list-item routerLink="/dashboard/advisor">Advisor App</a>
+        <a mat-list-item routerLink="/dashboard/Quoations">Quotation App</a>
+        <a mat-list-item routerLink="/dashboard/adminAppsUsers">CUD Admin App</a>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </mat-nav-list>

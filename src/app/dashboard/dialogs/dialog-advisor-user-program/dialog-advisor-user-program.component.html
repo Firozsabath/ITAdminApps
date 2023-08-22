@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>Add Programs</h2>
+<form [formGroup]="userProgram" (ngSubmit)="postUserProgram()">
+<mat-dialog-content>    
+        <div class="row">
+            <span class="mb-3">Adding program to the user: {{dialogdata.AdminName}}</span><br>
+            <mat-form-field appearance="fill">
+                <mat-label>Select Program</mat-label>
+                <mat-select [(ngModel)]="progSelectedValue" name="proList" formControlName='PragramsID'>
+                  <mat-option [value]="">
+                    Select a Program
+                  </mat-option>
+                  <mat-option *ngFor="let prog of proList" [value]="prog">
+                    {{prog.programName}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>   
+        </div>    
+        <div [hidden]="true">
+            <mat-form-field appearance="fill">
+                <mat-label>Enter ID</mat-label>
+                <input matInput formControlName='ID'>                        
+              </mat-form-field>     
+        </div>   
+        <div [hidden]="true">
+            <mat-form-field appearance="fill">
+                <mat-label>Enter ID</mat-label>
+                <input matInput formControlName='AdminName'>                        
+              </mat-form-field>     
+        </div>    
+</mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button [mat-dialog-close]="false" color="warn">Cancel</button>
+        <button mat-button type="submit" cdkFocusInitial color="primary">Save</button>
+    </mat-dialog-actions>
+</form>
